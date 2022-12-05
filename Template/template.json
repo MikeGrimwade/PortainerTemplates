@@ -956,13 +956,13 @@
         {
           "default": "8080",
           "label": "DECONZ_WEB_PORT",
-          "name": "DECONZ_WEB_PORT"
-          "description": "By default, the web UIs ("Wireless Light Control" and "Phoscon") and the REST API listen on port 8080; only set this environment variable if you wish to change the listen port."
+          "name": "DECONZ_WEB_PORT",
+          "description": "By default the web UIs and the REST API listen on port 8080. only set this environment variable if you wish to change the listen port."
         },
         {
           "default": "8443",
           "label": "DECONZ_WS_PORT",
-          "name": "DECONZ_WS_PORT"
+          "name": "DECONZ_WS_PORT",
           "description": "By default, the websockets service listens on port 443; only set this environment variable if you wish to change the listen port."
         },
         {
