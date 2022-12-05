@@ -435,10 +435,63 @@
       "platform": "linux",
       "repository": {
         "stackfile": "Template/Stack/bookstack.yml",
-        "url": "https://github.com/MikeGrimwade/Docker"
+        "url": "https://github.com/MikeGrimwade/PortainerTemplates"
       },
       "title": "Bookstack",
       "type": 3
+    },
+	{
+      "type": 3,
+      "title": "CodiMD",
+      "name": "codimd",
+      "description": "CodiMD lets you create realtime collaborative markdown notes on all platforms. Inspired by Hackpad, with more focus on speed and flexibility.",
+      "categories": [
+        "Wiki"
+      ],
+      "repository": {
+        "url": "https://github.com/MikeGrimwade/PortainerTemplates",
+        "stackfile": "stacks/codimd.yml"
+      },
+      "env": [
+        {
+          "name": "MARIADB_VOLUME",
+          "label": "MARIADB_VOLUME",
+          "default": "/portainer/AppData/CodiMD/DB"
+        },
+        {
+          "name": "CODIMD_VOLUME",
+          "label": "CODIMD_COLUME",
+          "default": "/portainer/AppData/CodiMD/Config"
+        },
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/London"
+        },
+        {
+          "name": "DB_PASSWORD",
+          "label": "DB_PASSWORD"
+        },
+        {
+          "name": "ROOT_PASSWORD",
+          "label": "ROOT_PASSWORD"
+        },
+        {
+          "name": "PORT",
+          "label": "PORT",
+          "default": "3001"
+        }
+      ]
     },
     {
       "categories": ["Cloud", "Books"],
@@ -474,6 +527,27 @@
         }
       ]
     },
+	{
+      "type": 1,
+      "title": "Caddy",
+      "description": "HTTP/2 web server with automatic HTTPS",
+      "categories": [
+        "webserver"
+      ],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/caddy.png",
+      "image": "abiosoft/caddy:latest",
+      "ports": [
+        "80/tcp",
+        "443/tcp",
+        "2015/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/root/.caddy"
+        }
+      ]
+    },
     {
       "categories": ["Cloud", "Books"],
       "description": "Calibre Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.",
@@ -506,6 +580,40 @@
         {
           "bind": "/portainer/Files/AppData/Config/Calibre-web",
           "container": "/config"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Cardigann",
+      "name": "cardigann",
+      "description": "Cardigann, a server for adding extra indexers to Sonarr, SickRage and CouchPotato via Torznab and TorrentPotato proxies. Behind the scenes Cardigann logs in and runs searches and then transforms the results into a compatible format.",
+      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/cardigann.png",
+      "image": "linuxserver/cardigann:latest",
+      "categories": [
+        "Downloaders"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        "5060:5060/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/portainer/AppData/Cardigann/Config"
+        }
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100"
         }
       ]
     },
@@ -655,6 +763,64 @@
         {
           "bind": "/portainer/Files/AppData/Config/Codiad",
           "container": "/config"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "CommandBox",
+      "description": "ColdFusion (CFML) CLI",
+      "categories": [
+        "development"
+      ],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ortussolutions-commandbox.png",
+      "image": "ortussolutions/commandbox:latest",
+      "env": [
+        {
+          "name": "CFENGINE",
+          "set": "lucee@4.5"
+        }
+      ],
+      "ports": [
+        "8080/tcp",
+        "8443/tcp"
+      ]
+    },
+    {
+      "type": 1,
+      "title": "ContentBox",
+      "description": "Open-source modular CMS",
+      "categories": [
+        "CMS"
+      ],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ortussolutions-contentbox.png",
+      "image": "ortussolutions/contentbox:latest",
+      "env": [
+        {
+          "name": "express",
+          "set": "true"
+        },
+        {
+          "name": "install",
+          "set": "true"
+        },
+        {
+          "name": "CFENGINE",
+          "set": "lucee@4.5"
+        }
+      ],
+      "ports": [
+        "8080/tcp",
+        "8443/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/data/contentbox/db"
+        },
+        {
+          "container": "/app/includes/shared/media"
         }
       ]
     },
@@ -1325,7 +1491,7 @@
       "platform": "linux",
       "repository": {
         "stackfile": "Template/Stack/invoice-ninja.yml",
-        "url": "https://github.com/MikeGrimwade/Docker"
+        "url": "https://github.com/MikeGrimwade/PortainerTemplates"
       },
       "title": "Invoice Ninja",
       "type": 3
@@ -2062,7 +2228,7 @@
       "platform": "linux",
       "repository": {
         "stackfile": "Template/Stack/nextcloud.yml",
-        "url": "https://github.com/MikeGrimwade/Docker"
+        "url": "https://github.com/MikeGrimwade/PortainerTemplates"
       },
       "title": "Nextcloud",
       "type": 3
@@ -2326,7 +2492,7 @@
       "platform": "linux",
       "repository": {
         "stackfile": "Template/Stack/owncloud.yml",
-        "url": "https://github.com/MikeGrimwade/Docker"
+        "url": "https://github.com/MikeGrimwade/PortainerTemplates"
       },
       "title": "Owncloud",
       "type": 3
@@ -2359,7 +2525,7 @@
       "platform": "linux",
       "repository": {
         "stackfile": "Template/Stack/petio.yml",
-        "url": "https://github.com/MikeGrimwade/Docker"
+        "url": "https://github.com/MikeGrimwade/PortainerTemplates"
       },
       "title": "Petio",
       "type": 3
