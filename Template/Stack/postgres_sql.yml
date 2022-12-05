@@ -13,5 +13,3 @@ services:
     restart: always
     ports:
       - $ADMINER_PORT:8080
-  
-failed to deploy a stack: services.db.environment.0 must be a string
