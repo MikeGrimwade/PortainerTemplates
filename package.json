@@ -1,5 +1,5 @@
 {
-  "name": "selfhosted_templates",
+  "name": "portainer_templates",
   "version": "1.0.0",
   "description": "Portainer Templates",
   "private": true,
