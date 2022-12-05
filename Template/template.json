@@ -1574,6 +1574,31 @@
       ]
     },
     {
+      "categories": ["Cloud", "Productivity", "Tools", "Other", "Web"],
+      "description": "Popular SQL based database with Adminer included for DB management.",
+      "env": [
+        {
+          "default": "example",
+          "label": "POSTGRES_PASSWORD",
+          "name": "POSTGRES_PASSWORD"
+        },
+        {
+          "label": "ADMINER_PORT",
+          "name": "ADMINER_PORT"
+        }
+      ],
+      "logo": "https://raw.githubusercontent.com/MikeGrimwade/PortainerTemplates/main/Images/PostgreSQL_logo.png",
+      "name": "postgres_sql",
+      "note": "",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/postgres_sql.yml",
+        "url": "https://github.com/MikeGrimwade/PortainerTemplates"
+      },
+      "title": "PostgresSQL",
+      "type": 3
+    },    
+    {
       "categories": ["Video"],
       "description": "Headless installation of Kodi™ (formerly known as XBMC™), to enable library updates.",
       "env": [
