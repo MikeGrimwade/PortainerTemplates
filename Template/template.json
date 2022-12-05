@@ -211,6 +211,132 @@
         }
       ]
     },
+	    {
+      "type": 3,
+      "title": "Bitwarden Stack",
+      "description": "Stack with bitwarden-rs container and an nightly backup routine.",
+      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/bitwarden.png",
+      "categories": [
+        "Utilities"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/MikeGrimwade/PortainerTemplates",
+        "stackfile": "stacks/bitwarden.yml"
+      },
+      "env": [
+        {
+          "name": "PORT",
+          "label": "PORT",
+          "default": "5430"
+        },
+        {
+          "name": "CRON_TIME",
+          "label": "CRON_TIME",
+          "default": "0 5 * * *"
+        },
+        {
+          "name": "UUID",
+          "label": "UUID",
+          "default": "1000"
+        },
+        {
+          "name": "GID",
+          "label": "GID",
+          "default": "100"
+        },
+        {
+          "name": "ADMIN_TOKEN",
+          "label": "ADMIN_TOKEN",
+          "default": "some_really_long_key"
+        },
+        {
+          "name": "DOMAIN",
+          "label": "DOMAIN",
+          "default": "https://bw.domain.com"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Bitwarden RS",
+      "name": "bitwarden",
+      "description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal..",
+      "note": "This project is not associated with the Bitwarden project nor 8bit Solutions LLC.",
+      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/bitwarden.png",
+      "image": "bitwardenrs/server:latest",
+      "categories": [
+        "Other",
+        "Tools"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        "5430:80/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/portainer/AppData/Bitwarden-rs/Config"
+        },
+        {
+          "container": "/data",
+          "bind": "/portainer/AppData/Bitwarden-rs/Data"
+        }
+      ],
+      "env": [
+        {
+          "name": "ADMIN_TOKEN",
+          "label": "ADMIN_TOKEN",
+          "default": "some_really_long_key"
+        },
+        {
+          "name": "DOMAIN",
+          "label": "DOMAIN",
+          "default": "https://bw.domain.com"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Bitwarden RS Backup",
+      "name": "bitwarden_backup",
+      "description": "A Docker container that backs up another bitwardenrs container's SQLite database.",
+      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/bitwarden.png",
+      "image": "bruceforce/bw_backup:latest",
+      "categories": [
+        "Other",
+        "Tools"
+      ],
+      "restart_policy": "always",
+      "platform": "linux",
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/portainer/AppData/Bitwarden-rs/Config"
+        },
+        {
+          "container": "/data",
+          "bind": "/portainer/AppData/Bitwarden-rs/Data"
+        },
+        {
+          "container": "/backup",
+          "bind": "/portainer/AppData/Bitwarden-rs/DB-Backup"
+        }
+      ],
+      "env": [
+        {
+          "name": "BACKUP_FILE",
+          "label": "BACKUP_FILE",
+          "default": "/backup/bitwarden.sqlite3"
+        },
+        {
+          "name": "CRON_TIME",
+          "label": "CRON_TIME",
+          "default": "0 5 * * *"
+        }
+      ]
+    },
     {
       "categories": ["Other", "Tools"],
       "description": "This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
