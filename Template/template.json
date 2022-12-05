@@ -444,6 +444,7 @@
       "type": 3,
       "title": "CodiMD",
       "name": "codimd",
+      "logo": "https://raw.githubusercontent.com/MikeGrimwade/PortainerTemplates/main/Images/codimd-icon-1024.png",
       "description": "CodiMD lets you create realtime collaborative markdown notes on all platforms. Inspired by Hackpad, with more focus on speed and flexibility.",
       "categories": [
         "Wiki"
