@@ -973,7 +973,7 @@
         }
       ],
       "image": "marthoc/deconz:stable",
-      "logo": "https://raw.githubusercontent.com/linuxserver/beta-templates/master/lsiodev/img/phoscon.png",
+      "logo": "https://raw.githubusercontent.com/MikeGrimwade/PortainerTemplates/main/Images/phoscon.png",
       "name": "deconz",
       "platform": "linux",
       "network": "host",
