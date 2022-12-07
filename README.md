@@ -3,37 +3,18 @@
 
 This is a template focused on helping people spin up selfhosted services using Portainer.
 
-### Portainer V1 Templates for Selfhosted Projects/Homelabs has moved to
-
-url: `https://raw.githubusercontent.com/Qballjos/portainer_templates/master/V1 Template/template.json`
-!!!This template will no longer be maintained!!!
-
 ### Prerequisites
 
-1. A server/NAS with docker installed
-2. A Portainer setup.
-
-*Want something we don't have? Make an issue and we'll work on adding it*
+1. A Portainer setup.
 
 ### Installing
 
 1. Login to your portainer setup go to settings
 2. Enable Use external templates
-3. Add the url: `https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json` then go to app templates and hit refresh at the top.
+3. Add the url: `https://raw.githubusercontent.com/MikeGrimwade/portainer_templates/master/Template/template.json` then go to app templates and hit refresh at the top.
 
 ### Information
-All templates are already configured to bind mount to various places on your drive. This branch works without the need for OMV. The following folders are all created in /portainer/
 
-* **Files** - General file storage.
-  * **AppData** - Subfolder where application data (unrelated to served data) is stored.
-    * **Config** - Subfolder where configuration files for every container are stored.
-* **Downloads** - Where bittorrent and usenet downloaders download files to.
-* **TV** - Where tv shows are stored/moved to after downloaded.
-* **Movies** - Where movies are stored/moved to after downloaded.
-* **Music** - Where music is stored/moved to after downloaded.
-* **Books** - Where books are stored/moved to after downloaded.
-* **Comics** - Where comics are stored/moved to after downloaded.
-* **Podcasts** - Where podcasts are stored/moved to after downloaded.
 ## App List
 
   - Adguard 
@@ -41,18 +22,28 @@ All templates are already configured to bind mount to various places on your dri
   - Authelia 
   - Bazarr 
   - Beets 
+  - Bitwarden Stack
+  - Bitwarden RS
+  - Bitwarden RS Backup
   - Vaultwarden 
   - Booksonic 
+  - Bookstack
+  - Caddy
+  - Cardigann
+  - CodiMD
   - Cops 
   - Calibre-web 
   - Chevereto 
   - Chowdown 
   - Code-server 
   - Codiad 
+  - CommandBox
+  - ContentBox
   - Couchpotato 
   - Daapd 
   - Dashmachine 
   - Davos 
+  - Deconz
   - Deemix 
   - Domoticz 
   - Duckdns 
@@ -88,6 +79,7 @@ All templates are already configured to bind mount to various places on your dri
   - Musicbrainz 
   - Muximux 
   - Mylar 
+  - Node Red
   - Nzbget 
   - Nzbhydra2 
   - Nextcloud 
@@ -105,6 +97,7 @@ All templates are already configured to bind mount to various places on your dri
   - Piwigo 
   - Plex 
   - Plexrequests 
+  - PostgresSQL
   - Projectsend 
   - Protonmail-bridge 
   - Prowlarr 
