@@ -2163,7 +2163,7 @@
       ]
     },
  {
-      "categories": ["Music"],
+      "categories": ["Home Automation"],
       "description": "Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways. ",
       "env": [
         {
@@ -2183,7 +2183,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "node-red-data",
+          "bind": "/node-red-data",
           "container": "/data"
         }
       ]
