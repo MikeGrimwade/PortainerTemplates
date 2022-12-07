@@ -2162,6 +2162,32 @@
         }
       ]
     },
+ {
+      "categories": ["Music"],
+      "description": "Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways. ",
+      "env": [
+        {
+          "default": "Europe/London",
+          "label": "Timezone",
+          "name": "TZ"
+        }
+      ],
+      "image": "nodered/node-red:latest",
+      "logo": "https://raw.githubusercontent.com/MikeGrimwade/PortainerTemplates/main/Images/node-red-icon.png",
+      "name": "node-red",
+      "platform": "linux",
+      "network": "node-red-net",
+      "ports": ["1880:1880/tcp"],
+      "restart_policy": "unless-stopped",
+      "title": "Node Red",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "node-red-data",
+          "container": "/data"
+        }
+      ]
+    },	  
     {
       "categories": ["Downloaders"],
       "description": "NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. It supports all platforms including Windows, Mac, Linux and works on all devices including PC, NAS, WLAN routers and media players.",
